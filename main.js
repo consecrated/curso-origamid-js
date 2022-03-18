@@ -35,14 +35,21 @@ function Dom (selector) {
     const elementsList = document.querySelectorAll(selector);
     this.elements = elementsList;
     this.addClass = function (classes) {
-        elementsList.forEach((item, index) => {
+        elementsList.forEach((item) => {
             item.classList.add(classes);
+        });
+    }
+    this.removeClass = function (classes) {
+        elementsList.forEach((item) => {
+            item.classList.remove(classes);
         });
     }
 }
 
 const element = new Dom('li');
+
 element.addClass('selected');
+element.removeClass('active');
 
 
 
